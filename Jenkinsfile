@@ -31,7 +31,7 @@ node('master') {
         export HOME=$WORKSPACE
         export USER=jenkins
 
-        repo init -u https://android.googlesource.com/platform/manifest -b android-o-preview-2 --depth=1
+        repo init -u https://android.googlesource.com/platform/manifest -b Android-8.0.0_r4 --depth=1
         rm -rf .repo/local_manifests
         git clone https://github.com/ayufan-pine64/local_manifests -b oreo .repo/local_manifests
 
