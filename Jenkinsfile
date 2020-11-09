@@ -34,8 +34,10 @@ node('master') {
         repo init -u https://android.googlesource.com/platform/manifest -b android-8.1.0_r9 --depth=1
         rm -rf .repo/local_manifests
         git clone https://github.com/ayufan-pine64/local_manifests -b oreo .repo/local_manifests
-		
-	    repo sync -j 20 -c --force-sync
+			 
+		git update-ref refs/remotes/android-8.1.0_r9 HEAD^
+
+        repo --trace sync -j 20 -c --force-sync
         '''
 
         withEnv([
