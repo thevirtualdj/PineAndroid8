@@ -35,7 +35,7 @@ node('master') {
         rm -rf .repo/local_manifests
         git clone https://github.com/ayufan-pine64/local_manifests -b oreo .repo/local_manifests
 
-        repo sync -j 1 -c --force-sync
+        repo sync -j 20 -c --force-sync
         '''
 
         withEnv([
