@@ -32,10 +32,9 @@ node('master') {
         export USER=jenkins
 
         repo init -u https://android.googlesource.com/platform/manifest -b android-8.1.0_r9 --depth=1
-        rm -rf .repo/local_manifests
-        git clone https://github.com/ayufan-pine64/local_manifests -b oreo .repo/local_manifests
+       
 
-        repo sync -j 4 --force-sync
+        repo sync -j 20 -c --force-sync
         '''
 
         withEnv([
