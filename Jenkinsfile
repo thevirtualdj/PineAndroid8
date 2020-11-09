@@ -35,10 +35,7 @@ node('master') {
         rm -rf .repo/local_manifests
         git clone https://github.com/ayufan-pine64/local_manifests -b oreo .repo/local_manifests
 		
-		rm -rf .git/refs/remotes/origin/master
-		git update-ref refs/remotes/android-8.1.0_r9 HEAD^
-
-        repo sync -j 20 -c --force-sync
+	    repo sync -j 20 -c --force-sync
         '''
 
         withEnv([
